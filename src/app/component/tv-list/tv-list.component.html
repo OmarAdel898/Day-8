@@ -1,0 +1,25 @@
+<div class="container row mx-auto mt-5 justify-content-evenly">
+  @for (tv of tvList; track $index) {
+
+
+    <div class="col-12 col-sm-6 col-md-4 ">
+      <a  [routerLink]="['/tvdetails', tv.id]">
+      <div class="card h-100">
+        <img
+          [src]="'https://image.tmdb.org/t/p/w500' + tv.poster_path"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ tv.title }}</h5>
+          <p class="card-text">{{ tv.overview }}</p>
+          <button class="btn btn-primary">Watch</button>
+        </div>
+      </div>
+    </a>
+    </div>
+
+  }@empty {
+  <h1>No Movies Founded!</h1>
+  }
+</div>
